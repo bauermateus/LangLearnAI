@@ -1,14 +1,19 @@
 package com.lla.langlearnai.ui.screens
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -37,23 +42,24 @@ import com.lla.langlearnai.ui.theme.LangLearnAITheme
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LoginScreen(navController: NavController) {
-    Scaffold(topBar = {
-        TopAppBar(title = {
-            Text(
-                text = "Login",
-                color = MaterialTheme.colorScheme.onPrimary,
-                textAlign = TextAlign.Center
-            )
-        }, navigationIcon = {
-            IconButton(onClick = { navController.navigate(LoginActivityScreens.WelcomeScreen.name)}) {
-                Icon(
-                    imageVector = Icons.Default.ArrowBack,
-                    contentDescription = "",
-                    tint = MaterialTheme.colorScheme.onPrimary
-                )
-            }
-        }, colors = TopAppBarDefaults.largeTopAppBarColors(MaterialTheme.colorScheme.primary))
-    }) {
+    Scaffold(
+        topBar = {
+            CenterAlignedTopAppBar(modifier = Modifier.fillMaxWidth(), title = {
+                Text(
+                    text = "Login",
+                    color = MaterialTheme.colorScheme.onPrimary,
+
+                    )
+            }, navigationIcon = {
+                IconButton(onClick = { navController.navigate(LoginActivityScreens.WelcomeScreen.name) }) {
+                    Icon(
+                        imageVector = Icons.Default.ArrowBack,
+                        contentDescription = "",
+                        tint = MaterialTheme.colorScheme.onPrimary
+                    )
+                }
+            }, colors = TopAppBarDefaults.largeTopAppBarColors(MaterialTheme.colorScheme.primary))
+        }) {
         Surface(
             modifier = Modifier
                 .padding(it)
@@ -64,9 +70,17 @@ fun LoginScreen(navController: NavController) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Spacer(modifier = Modifier.height(50.dp))
-                SimpleOutlinedTextFieldSample(label = "Email", modifier = Modifier.fillMaxWidth(0.8f))
+                SimpleOutlinedTextFieldSample(
+                    label = "Email",
+                    modifier = Modifier.fillMaxWidth(0.8f)
+                )
                 Spacer(modifier = Modifier.height(28.dp))
-                SimpleOutlinedTextFieldSample(label = "Password", modifier = Modifier.fillMaxWidth(0.8f), textStyle = TextStyle.Default, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password))
+                SimpleOutlinedTextFieldSample(
+                    label = "Password",
+                    modifier = Modifier.fillMaxWidth(0.8f),
+                    textStyle = TextStyle.Default,
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
+                )
                 Spacer(modifier = Modifier.height(28.dp))
                 StandardRoundedButton(
                     text = "Entrar",
@@ -78,7 +92,11 @@ fun LoginScreen(navController: NavController) {
                         .padding(20.dp)
                 )
                 Spacer(modifier = Modifier.height(20.dp))
-                Text(text = "Esqueceu sua senha?", fontSize = 18.sp, color = MaterialTheme.colorScheme.primary)
+                Text(
+                    text = "Esqueceu sua senha?",
+                    fontSize = 18.sp,
+                    color = MaterialTheme.colorScheme.primary
+                )
             }
 
         }
