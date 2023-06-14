@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">LangLearnAI</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <!-- %s é usado para fazer a substituição dinamicamente dentro de uma função stringResource() -->
+    <string name="welcome_screen_header">"Bem-vindo ao %s!"</string>
 </resources>
