@@ -1,4 +1,4 @@
-package com.lla.langlearnai
+package com.lla.langlearnai.ui.activitys
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,7 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.lla.langlearnai.ui.theme.AppTheme
+import com.lla.langlearnai.ui.theme.LangLearnAITheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -18,8 +18,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AppTheme {
-                // A surface container using the 'background' color from the theme
+            LangLearnAITheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background,
@@ -42,7 +41,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    AppTheme {
-        Greeting("Android")
+    LangLearnAITheme {
     }
 }
