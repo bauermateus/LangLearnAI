@@ -3,4 +3,5 @@
     <string name="title_activity_login">LoginActivity</string>
     <!-- %s é usado para fazer a substituição dinamicamente dentro de uma função stringResource() -->
     <string name="welcome_screen_header">"Bem-vindo ao %s!"</string>
+    <string name="what_to_learn_first_header">O que você gostaria de aprender primeiro?</string>
 </resources>

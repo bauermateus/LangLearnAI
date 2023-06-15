@@ -12,6 +12,7 @@ import com.lla.langlearnai.ui.screens.WelcomeScreen
 fun LoginActivityNavigation() {
     val navController = rememberNavController()
 
+
     NavHost(navController = navController, startDestination = LoginActivityScreens.WelcomeScreen.name) {
         composable(LoginActivityScreens.WelcomeScreen.name) {
             WelcomeScreen(navController = navController)
