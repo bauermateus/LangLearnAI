@@ -71,7 +71,7 @@ fun WelcomeScreen(navController: NavController) {
                     .fillMaxWidth()
                     .height(70.dp)
                     .padding(horizontal = 32.dp),
-                onClick = { /* TODO() */ })
+                onClick = { navController.navigate(LoginActivityScreens.LoginScreen.name)})
         }
     }
 }
